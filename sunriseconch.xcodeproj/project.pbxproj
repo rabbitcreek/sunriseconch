@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		01A8780E965A5A618CB49B46 /* Pods_sunriseconchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3873021052AC38BC68532E51 /* Pods_sunriseconchUITests.framework */; };
 		67287C08AA8D15BC15258638 /* Pods_sunriseconchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 564D2282572A1E0009DD919F /* Pods_sunriseconchTests.framework */; };
-		9C26430F21D5EF8500E57828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26430E21D5EF8500E57828 /* AppDelegate.swift */; };
 		9C26431121D5EF8500E57828 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26431021D5EF8500E57828 /* ViewController.swift */; };
 		9C26431421D5EF8500E57828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C26431221D5EF8500E57828 /* Main.storyboard */; };
 		9C26431621D5EF8500E57828 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C26431521D5EF8500E57828 /* Assets.xcassets */; };
 		9C26431921D5EF8500E57828 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C26431721D5EF8500E57828 /* LaunchScreen.storyboard */; };
 		9C26432421D5EF8500E57828 /* sunriseconchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26432321D5EF8500E57828 /* sunriseconchTests.swift */; };
 		9C26432F21D5EF8500E57828 /* sunriseconchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C26432E21D5EF8500E57828 /* sunriseconchUITests.swift */; };
+		9C7CE95D2233504700F2D90C /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CE95C2233504700F2D90C /* secondViewController.swift */; };
+		9C7CE95F223353C800F2D90C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CE95E223353C800F2D90C /* AppDelegate.swift */; };
 		DCBB06470EB158DA9308B4EF /* Pods_sunriseconch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBAD32E3397D051C59C6D7C6 /* Pods_sunriseconch.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +45,6 @@
 		8F66C2D49B6BFB38D8EFA8C6 /* Pods-sunriseconchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconchTests/Pods-sunriseconchTests.release.xcconfig"; sourceTree = "<group>"; };
 		964F4966D5D3C0DE5707FE3E /* Pods-sunriseconch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconch.release.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconch/Pods-sunriseconch.release.xcconfig"; sourceTree = "<group>"; };
 		9C26430B21D5EF8500E57828 /* sunriseconch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunriseconch.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C26430E21D5EF8500E57828 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C26431021D5EF8500E57828 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C26431321D5EF8500E57828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C26431521D5EF8500E57828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +56,8 @@
 		9C26432A21D5EF8500E57828 /* sunriseconchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sunriseconchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C26432E21D5EF8500E57828 /* sunriseconchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunriseconchUITests.swift; sourceTree = "<group>"; };
 		9C26433021D5EF8500E57828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C7CE95C2233504700F2D90C /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
+		9C7CE95E223353C800F2D90C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6E562F60A7C860B16381E4A /* Pods-sunriseconchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconchTests/Pods-sunriseconchTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CEFDCFA1E6402EE6E2989AF7 /* Pods-sunriseconch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconch/Pods-sunriseconch.debug.xcconfig"; sourceTree = "<group>"; };
 		EBAD32E3397D051C59C6D7C6 /* Pods_sunriseconch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sunriseconch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,8 +129,9 @@
 		9C26430D21D5EF8500E57828 /* sunriseconch */ = {
 			isa = PBXGroup;
 			children = (
-				9C26430E21D5EF8500E57828 /* AppDelegate.swift */,
 				9C26431021D5EF8500E57828 /* ViewController.swift */,
+				9C7CE95E223353C800F2D90C /* AppDelegate.swift */,
+				9C7CE95C2233504700F2D90C /* secondViewController.swift */,
 				9C26431221D5EF8500E57828 /* Main.storyboard */,
 				9C26431521D5EF8500E57828 /* Assets.xcassets */,
 				9C26431721D5EF8500E57828 /* LaunchScreen.storyboard */,
@@ -391,8 +394,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7CE95F223353C800F2D90C /* AppDelegate.swift in Sources */,
 				9C26431121D5EF8500E57828 /* ViewController.swift in Sources */,
-				9C26430F21D5EF8500E57828 /* AppDelegate.swift in Sources */,
+				9C7CE95D2233504700F2D90C /* secondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
