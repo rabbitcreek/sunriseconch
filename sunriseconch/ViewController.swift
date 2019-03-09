@@ -19,7 +19,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     @IBOutlet weak var sunsetView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
       
 
@@ -42,10 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     @IBAction func activateSchedule(_ sender: Any) {
         
         // Do any additional setup after loading the view, typically from a nib.
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        
         
         let myLocation = CLLocationCoordinate2D(latitude: latitudeMap , longitude: longMap)
         let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
@@ -53,6 +53,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //let dateAsString = solar?.sunrise
         let sunset = solar?.sunset
         let dateComponents = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: sunset!)
+        print(dateComponents)
         let center = UNUserNotificationCenter.current()
          center.delegate = self
         let content = UNMutableNotificationContent()
@@ -70,8 +71,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //var dateComponents = DateComponents()
         //dateComponents.hour = 10
         //dateComponents.minute = 30
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         //center.add(request)
