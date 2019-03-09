@@ -14,8 +14,31 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     var latitudeMap : Double = 0.0
     var longMap: Double = 0.0
+    @IBOutlet weak var sunsetView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+      
+
+}
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[locations.count - 1]
+        if location.horizontalAccuracy > 0{
+            locationManager.stopUpdatingLocation()
+            longMap = location.coordinate.longitude
+            latitudeMap = location.coordinate.latitude
+            
+            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
+    
+    
+    @IBAction func activateSchedule(_ sender: Any) {
+        
         // Do any additional setup after loading the view, typically from a nib.
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
@@ -27,7 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let solar = Solar(for: someDate!, coordinate: myLocation)
         //let dateAsString = solar?.sunrise
         let sunset = solar?.sunset
-       
+        
         
         // Step 1: Ask for permission
         let center = UNUserNotificationCenter.current()
@@ -63,22 +86,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         
         
-       
- 
-       
-
-}
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[locations.count - 1]
-        if location.horizontalAccuracy > 0{
-            locationManager.stopUpdatingLocation()
-            longMap = location.coordinate.longitude
-            latitudeMap = location.coordinate.latitude
-            
-            print("longitude = \(location.coordinate.longitude), latitude = \(location.coordinate.latitude)")
-        }
+        
+        
+        
     }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
+    
+    
 }
