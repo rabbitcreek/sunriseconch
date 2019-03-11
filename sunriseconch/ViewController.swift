@@ -48,8 +48,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         
         
         let myLocation = CLLocationCoordinate2D(latitude: latitudeMap , longitude: longMap)
-        let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let solar = Solar(for: someDate!, coordinate: myLocation)
+        let someDate = Date()
+        //let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let solar = Solar(for: someDate, coordinate: myLocation)
         //let dateAsString = solar?.sunrise
         let sunset = solar?.sunset
         let dateComponents = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: sunset!)

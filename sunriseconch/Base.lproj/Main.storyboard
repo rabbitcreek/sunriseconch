@@ -68,16 +68,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shell" translatesAutoresizingMaskIntoConstraints="NO" id="l8L-Pl-0n5">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Vm-x8F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="l6c-Vm-x8F" firstAttribute="bottom" secondItem="Hoa-0J-aNA" secondAttribute="bottom" id="90c-u6-rFm"/>
+                            <constraint firstItem="l6c-Vm-x8F" firstAttribute="leading" secondItem="Hoa-0J-aNA" secondAttribute="leading" id="Ldb-Ma-xvw"/>
                             <constraint firstItem="l8L-Pl-0n5" firstAttribute="bottom" secondItem="Hoa-0J-aNA" secondAttribute="bottom" id="i1d-24-hZC"/>
                             <constraint firstItem="l8L-Pl-0n5" firstAttribute="top" secondItem="WWu-bk-oZx" secondAttribute="top" id="kLd-uj-Awd"/>
                             <constraint firstItem="l8L-Pl-0n5" firstAttribute="leading" secondItem="Hoa-0J-aNA" secondAttribute="leading" id="kNZ-ZR-SBQ"/>
+                            <constraint firstItem="l6c-Vm-x8F" firstAttribute="top" secondItem="WWu-bk-oZx" secondAttribute="top" id="kwB-97-3kb"/>
                             <constraint firstItem="l8L-Pl-0n5" firstAttribute="trailing" secondItem="Hoa-0J-aNA" secondAttribute="trailing" id="ngB-NC-wON"/>
+                            <constraint firstItem="l6c-Vm-x8F" firstAttribute="trailing" secondItem="Hoa-0J-aNA" secondAttribute="trailing" id="qdW-tI-SFP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Hoa-0J-aNA"/>
                     </view>
+                    <connections>
+                        <outlet property="sceneView" destination="l6c-Vm-x8F" id="6Ff-dR-RrN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ok-Pp-kj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
