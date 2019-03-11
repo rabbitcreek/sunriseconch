@@ -48,12 +48,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         
         
         let myLocation = CLLocationCoordinate2D(latitude: latitudeMap , longitude: longMap)
-        let someDate = Date()
-        //let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let solar = Solar(for: someDate, coordinate: myLocation)
+        //let someDate = Date()
+        let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        //someDate = someDate?.addingTimeInterval(20.0 * 60.0)
+        let solar = Solar(for: someDate!, coordinate: myLocation)
         //let dateAsString = solar?.sunrise
         let sunset = solar?.sunset
-        let dateComponents = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: sunset!)
+        //let dateComponents = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: sunset!)
+        let dateComponents = Calendar.current.dateComponents([  .hour, .minute, .second], from: sunset!)
+        //dateComponents.hour = 19
+        //dateComponents.minute = 12
         print(dateComponents)
         let center = UNUserNotificationCenter.current()
          center.delegate = self
