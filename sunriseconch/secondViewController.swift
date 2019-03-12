@@ -11,6 +11,8 @@ import SceneKit
 import ARKit
 
 class secondViewController: UIViewController, ARSCNViewDelegate{
+    var audioPlayer: AVAudioPlayer!
+      let soundEffect = URL(fileURLWithPath: Bundle.main.path(forResource: "0001", ofType: "wav")!)
     
     @IBOutlet weak var sceneView: ARSCNView!
     override func viewDidLoad() {
@@ -27,6 +29,8 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         
         // Set the scene to the view
         sceneView.scene = scene
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        sceneView.addGestureRecognizer(gestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +75,29 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
-    
+    @objc func tapped(recognizer :UIGestureRecognizer) {
+        // Get exact position where touch happened on screen of iPhone (2D coordinate)
+        let touchPosition = recognizer.location(in: sceneView)
+        
+        // 2.
+        // Conduct a hit test based on a feature point that ARKit detected to find out what 3D point this 2D coordinate relates to
+        let hitTestResult = sceneView.hitTest(touchPosition, types: .featurePoint)
+        
+        // 3.
+        if !hitTestResult.isEmpty {
+            guard let hitResult = hitTestResult.first else {
+                return
+            }
+            print(hitResult.worldTransform.columns.3)
+            // setting up url for your soundtrack
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
+            audioPlayer.play()
+        } catch {
+            // couldn't load file :(
+        } 
+    }
     
    
 }
