@@ -45,8 +45,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     @IBAction func activateSchedule(_ sender: Any) {
         
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+       
+        (sender as! UIButton).setTitle("Invitation Sent", for: [])
+       
         let myLocation = CLLocationCoordinate2D(latitude: latitudeMap , longitude: longMap)
         //let someDate = Date()
         let someDate =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
@@ -58,12 +59,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         let dateComponents = Calendar.current.dateComponents([  .hour, .minute, .second], from: sunset!)
         //dateComponents.hour = 19
         //dateComponents.minute = 12
-        print(dateComponents)
+        print(" Sunset:  \(dateComponents)")
+        
         let center = UNUserNotificationCenter.current()
          center.delegate = self
         let content = UNMutableNotificationContent()
-        content.title = "Late wake up call"
-        content.body = "The early bird catches the worm, but the second mouse gets the cheese."
+        content.title = "Conch Call"
+        content.body = "Its Sundown Time to Blow the Conch"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = UNNotificationSound.default
@@ -78,7 +80,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //dateComponents.minute = 30
         //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "last call", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         //center.add(request)
       /*
@@ -114,7 +116,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         }
        */
       
-      
+        let date = Date().addingTimeInterval(10)
+        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
+        RunLoop.main.add(timer, forMode: .common)
         
         
         
@@ -136,6 +140,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
                 
             case "show":
                 // the user tapped our "show more info…" button
+                performSegue(withIdentifier: "goToScreenTwo", sender: self)
                 print("Show more information…")
                 break
                 
@@ -148,7 +153,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         completionHandler()
     }
     
-    
+    @objc func runCode(){
+       performSegue(withIdentifier: "goToScreenTwo", sender: self)
+    }
   
     
     

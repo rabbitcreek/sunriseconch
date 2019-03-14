@@ -17,7 +17,7 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
     @IBOutlet weak var sceneView: ARSCNView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -94,10 +94,14 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
             audioPlayer.play()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { // Change `2.0` to the desired number of seconds.
+                // Code you want to be delayed
+                self.performSegue(withIdentifier: "Return", sender: self)
+            }
+            
         } catch {
             // couldn't load file :(
         } 
     }
     
-   
 }
