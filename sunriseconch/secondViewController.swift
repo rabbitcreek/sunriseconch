@@ -38,7 +38,7 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         planeNode?.runAction(forever)
         // Set the scene to the view
         //sceneView.scene = scene
-        //addLight()
+        
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
     }
@@ -123,8 +123,9 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
             audioPlayer.play()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { // Change `2.0` to the desired number of seconds.
+            DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) { // Change `2.0` to the desired number of seconds.
                 // Code you want to be delayed
+               
                 self.performSegue(withIdentifier: "Return", sender: self)
             }
             

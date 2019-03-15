@@ -75,13 +75,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //center.setNotificationCategories([category])
         
         
-        var dateComponents2 = DateComponents()
-        dateComponents2 = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: Date())
-        dateComponents2.hour = dateComponents.hour
-        print("This is Hour \(dateComponents2.hour!)")
-        dateComponents2.minute = dateComponents.minute
+        //var dateComponents2 = DateComponents()
+        //dateComponents2 = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: Date())
+        //dateComponents2.hour = dateComponents.hour
+        //print("This is Hour \(dateComponents2.hour!)")
+        //dateComponents2.minute = dateComponents.minute
         //dateComponents2.minute = 51
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "last call", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
@@ -118,14 +118,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             // Check the error parameter and handle any errors
         }
        */
+        /*
         let date = NSCalendar.current.date(from: dateComponents2)
         print(date!)
         let timer = Timer(fireAt: date!, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: .common)
+        */
         
         
         
-        
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler(.alert)
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // pull out the buried userInfo dictionary
