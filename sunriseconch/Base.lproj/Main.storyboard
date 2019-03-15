@@ -36,12 +36,26 @@
                                     <action selector="activateSchedule:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIQ-qe-6en"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgP-fK-8Qn">
+                                <rect key="frame" x="76.5" y="482" width="167" height="66"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="T1K-ny-WkL"/>
+                                    <constraint firstAttribute="width" constant="167" id="ayN-wh-71I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.043020790459685654" blue="0.30263896883427843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HgP-fK-8Qn" secondAttribute="bottom" constant="20" id="FDX-Hg-a9N"/>
                             <constraint firstItem="Yg4-2B-MYI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kae-eV-iFT"/>
                             <constraint firstItem="Yg4-2B-MYI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ks9-ER-H4U"/>
                             <constraint firstItem="Yg4-2B-MYI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="NMt-ul-S6C"/>
+                            <constraint firstItem="HgP-fK-8Qn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rxx-cT-D0S"/>
+                            <constraint firstItem="HgP-fK-8Qn" firstAttribute="top" secondItem="4zV-kX-5fE" secondAttribute="bottom" constant="155.5" id="bbY-p5-kbd"/>
                             <constraint firstItem="Yg4-2B-MYI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eZ6-zJ-A1i"/>
                             <constraint firstItem="4zV-kX-5fE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xty-92-ua8"/>
                             <constraint firstItem="4zV-kX-5fE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yMX-it-Sdc"/>
@@ -49,13 +63,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="sunsetTimeLabel" destination="HgP-fK-8Qn" id="RD3-8A-Q4s"/>
                         <outlet property="sunsetView" destination="Yg4-2B-MYI" id="xQk-iH-Doy"/>
                         <segue destination="Yss-mD-7Sv" kind="show" identifier="goToScreenTwo" id="MBJ-YA-HOt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141.59999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="140.625" y="133.09859154929578"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Kmt-JP-U45">

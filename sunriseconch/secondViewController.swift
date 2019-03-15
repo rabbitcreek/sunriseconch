@@ -123,16 +123,25 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundEffect)
             audioPlayer.play()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 8.0) { // Change `2.0` to the desired number of seconds.
-                // Code you want to be delayed
-               
-                self.performSegue(withIdentifier: "Return", sender: self)
-            }
+           
+            
             
         } catch {
             // couldn't load file :(
-        } 
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10.0) { // Change `2.0` to the desired number of seconds.
+            // Code you want to be delayed
+            
+            self.addLight()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 15.0) { // Change `2.0` to the desired number of seconds.
+            // Code you want to be delayed
+            
+            self.performSegue(withIdentifier: "Return", sender: self)
+        }
     }
+   
     
 }
 extension Int {

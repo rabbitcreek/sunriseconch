@@ -17,6 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     var latitudeMap : Double = 0.0
     var longMap: Double = 0.0
     @IBOutlet weak var sunsetView: UIImageView!
+    @IBOutlet weak var sunsetTimeLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -60,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //dateComponents.hour = 19
         //dateComponents.minute = 12
         print(" Sunset:  \(dateComponents)")
-        
+        sunsetTimeLabel.text = " \( dateComponents.hour ?? 0) : \(dateComponents.minute ?? 0)"
         let center = UNUserNotificationCenter.current()
          center.delegate = self
         let content = UNMutableNotificationContent()
