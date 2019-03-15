@@ -4,8 +4,8 @@
   <contributor>
    <authoring_tool>SceneKit Collada Exporter v1.0</authoring_tool>
   </contributor>
-  <created>2019-03-12T03:31:03Z</created>
-  <modified>2019-03-12T03:31:03Z</modified>
+  <created>2019-03-15T01:52:40Z</created>
+  <modified>2019-03-15T01:52:40Z</modified>
   <unit meter="1.000000"/>
   <up_axis>Y_UP</up_axis>
  </asset>
@@ -204,26 +204,28 @@
  <library_visual_scenes>
   <visual_scene id="scene16">
    <node id="Camera" name="Camera">
-    <matrix>0.6859207 -0.3240134 0.6515581 7.481132 -5.960464e-08 0.8953953 0.4452716 5.343665 -0.7276762 -0.3054209 0.6141703 6.50764 0 0 0 1 </matrix>
+    <matrix>0.6859207 -0.3240134 0.6515581 7.481132 -2.980232e-08 0.8953953 0.4452715 5.343665 -0.7276762 -0.305421 0.6141704 6.50764 0 0 0 1 </matrix>
     <instance_camera url="#Camera-camera"/>
    </node>
    <node id="Lamp" name="Lamp">
-    <matrix>-0.2908646 0.5663931 0.7711008 4.076245 -0.05518894 0.7946723 -0.6045246 5.903862 -0.955171 -0.2183911 -0.1998834 -1.005454 0 0 0 1 </matrix>
+    <matrix>-0.2908646 0.5663931 0.7711008 4.076245 -0.05518897 0.7946723 -0.6045246 5.903862 -0.955171 -0.2183911 -0.1998834 -1.005454 0 0 0 1 </matrix>
     <instance_light url="#Lamp-light"/>
    </node>
-   <node id="conch" name="conch">
-    <matrix>-0.02170362 -1.178004e-09 0.02069494 0.06684607 1.320892e-09 0.02999306 3.092086e-09 7.593822e-08 -0.02069483 3.149799e-09 -0.02170374 -0.8310499 0 0 0 1 </matrix>
-    <instance_geometry url="#Conch_Shell_pivot">
-     <bind_material>
-      <technique_common>
-       <instance_material symbol="geometryElement15" target="#Conch_Shell-material">
-        <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
-        <bind_vertex_input semantic="CHANNEL3" input_semantic="TEXCOORD" input_set="1"/>
-        <bind_vertex_input semantic="CHANNEL7" input_semantic="TEXCOORD" input_set="1"/>
-       </instance_material>
-      </technique_common>
-     </bind_material>
-    </instance_geometry>
+   <node id="baseNode" name="baseNode">
+    <node id="Conch" name="Conch">
+     <matrix>0.6662002 -0.2665583 0.6964812 -1.04524 2.235141e-07 0.9338948 0.3574379 3.662028 -0.7457528 -0.2381231 0.6221847 -0.9337386 0 0 0 1 </matrix>
+     <instance_geometry url="#Conch_Shell_pivot">
+      <bind_material>
+       <technique_common>
+        <instance_material symbol="geometryElement15" target="#Conch_Shell-material">
+         <bind_vertex_input semantic="CHANNEL2" input_semantic="TEXCOORD" input_set="1"/>
+         <bind_vertex_input semantic="CHANNEL3" input_semantic="TEXCOORD" input_set="1"/>
+         <bind_vertex_input semantic="CHANNEL7" input_semantic="TEXCOORD" input_set="1"/>
+        </instance_material>
+       </technique_common>
+      </bind_material>
+     </instance_geometry>
+    </node>
    </node>
   </visual_scene>
  </library_visual_scenes>

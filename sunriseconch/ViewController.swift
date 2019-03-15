@@ -75,11 +75,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //center.setNotificationCategories([category])
         
         
-        //var dateComponents = DateComponents()
-        //dateComponents.hour = 10
-        //dateComponents.minute = 30
-        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        var dateComponents2 = DateComponents()
+        dateComponents2 = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: Date())
+        dateComponents2.hour = dateComponents.hour
+        print("This is Hour \(dateComponents2.hour!)")
+        dateComponents2.minute = dateComponents.minute
+        //dateComponents2.minute = 51
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "last call", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         //center.add(request)
@@ -115,9 +118,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             // Check the error parameter and handle any errors
         }
        */
-      
-        let date = Date().addingTimeInterval(10)
-        let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
+        let date = NSCalendar.current.date(from: dateComponents2)
+        print(date!)
+        let timer = Timer(fireAt: date!, interval: 0, target: self, selector: #selector(runCode), userInfo: nil, repeats: false)
         RunLoop.main.add(timer, forMode: .common)
         
         
@@ -140,7 +143,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
                 
             case "show":
                 // the user tapped our "show more info…" button
-                performSegue(withIdentifier: "goToScreenTwo", sender: self)
+                //performSegue(withIdentifier: "goToScreenTwo", sender: self)
                 print("Show more information…")
                 break
                 
@@ -154,6 +157,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     }
     
     @objc func runCode(){
+        print("im in runcode")
        performSegue(withIdentifier: "goToScreenTwo", sender: self)
     }
   

@@ -15,6 +15,7 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
       let soundEffect = URL(fileURLWithPath: Bundle.main.path(forResource: "0001", ofType: "wav")!)
     
     @IBOutlet weak var sceneView: ARSCNView!
+     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -23,21 +24,30 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
+        self.sceneView.autoenablesDefaultLighting = true
+        sceneView.session.run(configuration)
         // Create a new scene
         let scene = SCNScene(named: "art.scnassets/conch3.dae")!
+        let planeNode = scene.rootNode.childNode(withName: "baseNode", recursively: true)
+        planeNode?.scale = SCNVector3Make(0.05, 0.05, 0.05)
+        planeNode?.position = SCNVector3(0.5,0,-0.5)
         
+        self.sceneView.scene.rootNode.addChildNode(planeNode!)
+        let action = SCNAction.rotateBy(x: 0, y: CGFloat(360.degreesToRadians), z: 0, duration: 8)
+        let forever = SCNAction.repeatForever(action)
+        planeNode?.runAction(forever)
         // Set the scene to the view
-        sceneView.scene = scene
+        //sceneView.scene = scene
+        //addLight()
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))
         sceneView.addGestureRecognizer(gestureRecognizer)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+            configuration.environmentTexturing = .automatic
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+       // let configuration = ARWorldTrackingConfiguration()
         
         // Run the view's session
         sceneView.session.run(configuration)
@@ -75,6 +85,25 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    func addLight() {
+        // 1
+        let directionalLight = SCNLight()
+        directionalLight.type = .directional
+        // 2
+        directionalLight.intensity = 0
+        // 3
+        directionalLight.castsShadow = true
+        directionalLight.shadowMode = .deferred
+        // 4
+        directionalLight.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1)
+        // 5
+        directionalLight.shadowSampleCount = 10
+        // 6
+        let directionalLightNode = SCNNode()
+        directionalLightNode.light = directionalLight
+        directionalLightNode.rotation = SCNVector4Make(1, 1, 0, -Float.pi / 3)
+        sceneView.scene.rootNode.addChildNode(directionalLightNode)
+    }
     @objc func tapped(recognizer :UIGestureRecognizer) {
         // Get exact position where touch happened on screen of iPhone (2D coordinate)
         let touchPosition = recognizer.location(in: sceneView)
@@ -105,3 +134,7 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
     }
     
 }
+extension Int {
+    var degreesToRadians: Double { return Double(self) * .pi/180}
+}
+
