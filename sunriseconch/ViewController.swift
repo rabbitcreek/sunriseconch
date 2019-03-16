@@ -61,7 +61,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //dateComponents.hour = 19
         //dateComponents.minute = 12
         print(" Sunset:  \(dateComponents)")
-        sunsetTimeLabel.text = " \( dateComponents.hour ?? 0) : \(dateComponents.minute ?? 0)"
+        sunsetTimeLabel.text = " \( (dateComponents.hour ?? 0) - 12) : \(dateComponents.minute ?? 0)"
         let center = UNUserNotificationCenter.current()
          center.delegate = self
         let content = UNMutableNotificationContent()
@@ -138,6 +138,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         // pull out the buried userInfo dictionary
         print("one")
+        performSegue(withIdentifier: "goToScreenTwo", sender: self)
         let userInfo = response.notification.request.content.userInfo
         
         if let customData = userInfo["customData"] as? String {
@@ -146,12 +147,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             switch response.actionIdentifier {
             case UNNotificationDefaultActionIdentifier:
                 // the user swiped to unlock
-                performSegue(withIdentifier: "goToScreenTwo", sender: self)
                 print("Default identifier")
+                performSegue(withIdentifier: "goToScreenTwo", sender: self)
+                
                 
             case "show":
                 // the user tapped our "show more info…" button
-                //performSegue(withIdentifier: "goToScreenTwo", sender: self)
+                performSegue(withIdentifier: "goToScreenTwo", sender: self)
                 print("Show more information…")
                 break
                 
@@ -164,11 +166,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         completionHandler()
     }
     
-    @objc func runCode(){
-        print("im in runcode")
-       performSegue(withIdentifier: "goToScreenTwo", sender: self)
-    }
-  
+    
     
     
 }
