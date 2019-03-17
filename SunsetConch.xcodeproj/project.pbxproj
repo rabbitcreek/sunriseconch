@@ -46,16 +46,16 @@
 		868A9DDD15042CDBCA75CF4F /* Pods-sunriseconchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconchUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconchUITests/Pods-sunriseconchUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8F66C2D49B6BFB38D8EFA8C6 /* Pods-sunriseconchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconchTests/Pods-sunriseconchTests.release.xcconfig"; sourceTree = "<group>"; };
 		964F4966D5D3C0DE5707FE3E /* Pods-sunriseconch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sunriseconch.release.xcconfig"; path = "Pods/Target Support Files/Pods-sunriseconch/Pods-sunriseconch.release.xcconfig"; sourceTree = "<group>"; };
-		9C26430B21D5EF8500E57828 /* sunriseconch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sunriseconch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C26430B21D5EF8500E57828 /* SunsetConch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunsetConch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C26431021D5EF8500E57828 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9C26431321D5EF8500E57828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C26431521D5EF8500E57828 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C26431821D5EF8500E57828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C26431A21D5EF8500E57828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C26431F21D5EF8500E57828 /* sunriseconchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sunriseconchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C26431F21D5EF8500E57828 /* SunsetConchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunsetConchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C26432321D5EF8500E57828 /* sunriseconchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunriseconchTests.swift; sourceTree = "<group>"; };
 		9C26432521D5EF8500E57828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C26432A21D5EF8500E57828 /* sunriseconchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sunriseconchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C26432A21D5EF8500E57828 /* SunsetConchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SunsetConchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C26432E21D5EF8500E57828 /* sunriseconchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sunriseconchUITests.swift; sourceTree = "<group>"; };
 		9C26433021D5EF8500E57828 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C7CE95C2233504700F2D90C /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
@@ -123,9 +123,9 @@
 		9C26430C21D5EF8500E57828 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C26430B21D5EF8500E57828 /* sunriseconch.app */,
-				9C26431F21D5EF8500E57828 /* sunriseconchTests.xctest */,
-				9C26432A21D5EF8500E57828 /* sunriseconchUITests.xctest */,
+				9C26430B21D5EF8500E57828 /* SunsetConch.app */,
+				9C26431F21D5EF8500E57828 /* SunsetConchTests.xctest */,
+				9C26432A21D5EF8500E57828 /* SunsetConchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -177,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C26430A21D5EF8500E57828 /* sunriseconch */ = {
+		9C26430A21D5EF8500E57828 /* SunsetConch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C26433321D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconch" */;
+			buildConfigurationList = 9C26433321D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConch" */;
 			buildPhases = (
 				290FB1A5A6D39C909C31759F /* [CP] Check Pods Manifest.lock */,
 				9C26430721D5EF8500E57828 /* Sources */,
@@ -191,14 +191,14 @@
 			);
 			dependencies = (
 			);
-			name = sunriseconch;
+			name = SunsetConch;
 			productName = sunriseconch;
-			productReference = 9C26430B21D5EF8500E57828 /* sunriseconch.app */;
+			productReference = 9C26430B21D5EF8500E57828 /* SunsetConch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9C26431E21D5EF8500E57828 /* sunriseconchTests */ = {
+		9C26431E21D5EF8500E57828 /* SunsetConchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C26433621D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconchTests" */;
+			buildConfigurationList = 9C26433621D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConchTests" */;
 			buildPhases = (
 				914B8602C44D6C8D10A6CA35 /* [CP] Check Pods Manifest.lock */,
 				9C26431B21D5EF8500E57828 /* Sources */,
@@ -210,14 +210,14 @@
 			dependencies = (
 				9C26432121D5EF8500E57828 /* PBXTargetDependency */,
 			);
-			name = sunriseconchTests;
+			name = SunsetConchTests;
 			productName = sunriseconchTests;
-			productReference = 9C26431F21D5EF8500E57828 /* sunriseconchTests.xctest */;
+			productReference = 9C26431F21D5EF8500E57828 /* SunsetConchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C26432921D5EF8500E57828 /* sunriseconchUITests */ = {
+		9C26432921D5EF8500E57828 /* SunsetConchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C26433921D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconchUITests" */;
+			buildConfigurationList = 9C26433921D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConchUITests" */;
 			buildPhases = (
 				4CC44A73E910E355E8273724 /* [CP] Check Pods Manifest.lock */,
 				9C26432621D5EF8500E57828 /* Sources */,
@@ -229,9 +229,9 @@
 			dependencies = (
 				9C26432C21D5EF8500E57828 /* PBXTargetDependency */,
 			);
-			name = sunriseconchUITests;
+			name = SunsetConchUITests;
 			productName = sunriseconchUITests;
-			productReference = 9C26432A21D5EF8500E57828 /* sunriseconchUITests.xctest */;
+			productReference = 9C26432A21D5EF8500E57828 /* SunsetConchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -257,7 +257,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9C26430621D5EF8500E57828 /* Build configuration list for PBXProject "sunriseconch" */;
+			buildConfigurationList = 9C26430621D5EF8500E57828 /* Build configuration list for PBXProject "SunsetConch" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -270,9 +270,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C26430A21D5EF8500E57828 /* sunriseconch */,
-				9C26431E21D5EF8500E57828 /* sunriseconchTests */,
-				9C26432921D5EF8500E57828 /* sunriseconchUITests */,
+				9C26430A21D5EF8500E57828 /* SunsetConch */,
+				9C26431E21D5EF8500E57828 /* SunsetConchTests */,
+				9C26432921D5EF8500E57828 /* SunsetConchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -429,12 +429,12 @@
 /* Begin PBXTargetDependency section */
 		9C26432121D5EF8500E57828 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C26430A21D5EF8500E57828 /* sunriseconch */;
+			target = 9C26430A21D5EF8500E57828 /* SunsetConch */;
 			targetProxy = 9C26432021D5EF8500E57828 /* PBXContainerItemProxy */;
 		};
 		9C26432C21D5EF8500E57828 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C26430A21D5EF8500E57828 /* sunriseconch */;
+			target = 9C26430A21D5EF8500E57828 /* SunsetConch */;
 			targetProxy = 9C26432B21D5EF8500E57828 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -631,7 +631,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunriseconch.app/sunriseconch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunsetConch.app/SunsetConch";
 			};
 			name = Debug;
 		};
@@ -653,7 +653,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sunriseconch.app/sunriseconch";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SunsetConch.app/SunsetConch";
 			};
 			name = Release;
 		};
@@ -702,7 +702,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C26430621D5EF8500E57828 /* Build configuration list for PBXProject "sunriseconch" */ = {
+		9C26430621D5EF8500E57828 /* Build configuration list for PBXProject "SunsetConch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C26433121D5EF8500E57828 /* Debug */,
@@ -711,7 +711,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C26433321D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconch" */ = {
+		9C26433321D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C26433421D5EF8500E57828 /* Debug */,
@@ -720,7 +720,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C26433621D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconchTests" */ = {
+		9C26433621D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C26433721D5EF8500E57828 /* Debug */,
@@ -729,7 +729,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9C26433921D5EF8500E57828 /* Build configuration list for PBXNativeTarget "sunriseconchUITests" */ = {
+		9C26433921D5EF8500E57828 /* Build configuration list for PBXNativeTarget "SunsetConchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9C26433A21D5EF8500E57828 /* Debug */,
