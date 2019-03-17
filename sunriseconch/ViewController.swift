@@ -57,11 +57,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //let dateAsString = solar?.sunrise
         let sunset = solar?.sunset
         //let dateComponents = Calendar.current.dateComponents([.timeZone, .year, .month, .day, .hour, .minute, .second], from: sunset!)
-        let dateComponents = Calendar.current.dateComponents([  .hour, .minute, .second], from: sunset!)
-        //dateComponents.hour = 19
-        //dateComponents.minute = 12
+        var dateComponents = Calendar.current.dateComponents([  .hour, .minute, .second], from: sunset!)
+        //dateComponents.hour = 14
+        //dateComponents.minute = 17
         print(" Sunset:  \(dateComponents)")
-        sunsetTimeLabel.text = " \( (dateComponents.hour ?? 0) - 12) : \(dateComponents.minute ?? 0)"
+        sunsetTimeLabel.text = " \( (dateComponents.hour ?? 0) - 12) : " + String(format: "%02d", dateComponents.minute ?? 0)
         let center = UNUserNotificationCenter.current()
          center.delegate = self
         let content = UNMutableNotificationContent()
@@ -82,8 +82,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         //print("This is Hour \(dateComponents2.hour!)")
         //dateComponents2.minute = dateComponents.minute
         //dateComponents2.minute = 51
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
-        //let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        //let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: "last call", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
         //center.add(request)

@@ -33,7 +33,7 @@ class secondViewController: UIViewController, ARSCNViewDelegate{
         planeNode?.scale = SCNVector3Make(0.05, 0.05, 0.05)
         planeNode?.position = SCNVector3(0.5,0,-0.5)
         var count = -0.5
-        var timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true){ t in
+        _ = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true){ t in
             count = count + self.mover
             print(count)
             planeNode?.position = SCNVector3(0.5,0,count)
